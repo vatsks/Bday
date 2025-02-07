@@ -8,9 +8,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     text-align: center;
+    flex-direction: column;
+    padding: 20px; /* Add padding for mobile screens */
 }
 
 /* Home Page */
@@ -20,12 +22,14 @@ body {
     color: white;
 }
 
+/* Responsive Text */
 p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     color: white;
 }
 
+/* Buttons */
 .btn {
     background: #FF4081;
     color: white;
@@ -41,90 +45,59 @@ p {
     background: #FF80AB;
 }
 
-/* Gallery Image Styling */
+/* 🌸 Gallery Image Styling */
 #galleryImage {
     border-radius: 20px;
-    border: 8px solid;
+    border: 6px solid;
     border-image-source: linear-gradient(45deg, #FFC0CB, #FFDAB9);
     border-image-slice: 1;
     transition: all 0.3s ease-in-out;
     object-fit: cover;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
 }
 
-/* Landscape Images */
-.landscape {
-    width: 450px;
-    height: 300px;
-}
+/* Adjust for Mobile Screens */
+@media (max-width: 768px) {
+    .home-container h1 {
+        font-size: 2.5rem; /* Reduce font size */
+    }
 
-/* Portrait Images */
-.portrait {
-    width: 300px;
-    height: 450px;
-}
+    p {
+        font-size: 1.2rem;
+    }
 
-/* Click Me Button */
-.note-btn {
-    position: absolute;
-    background: white;
-    color: #FF4081;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
+    /* Button Adjustments */
+    .btn {
+        font-size: 18px;
+        padding: 12px 18px;
+    }
 
-.note-btn:hover {
-    background: #FF80AB;
-    color: white;
-}
+    /* Responsive Images */
+    .landscape, .portrait {
+        width: 90%;
+        height: auto;
+    }
 
-/* Hidden Note */
-.hidden-note {
-    display: none;
-    position: absolute;
-    background: linear-gradient(to right, #E6E6FA, #FFDAB9);
-    padding: 15px;
-    border-radius: 10px;
-    color: #333;
-    font-size: 14px;
-    text-align: center;
-    width: 200px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-}
+    #galleryImage {
+        max-width: 100%;
+    }
 
-/* Show Note Animation */
-.show-note {
-    display: block;
-    max-height: 100px;
-    opacity: 1;
-}
+    /* Note Button */
+    .note-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
 
-/* Navigation Buttons */
-.buttons {
-    margin-top: 20px;
-}
+    /* Navigation Buttons */
+    .buttons {
+        flex-direction: column; /* Stack buttons for smaller screens */
+        gap: 10px;
+    }
 
-.buttons button {
-    background: #FF4081;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.buttons button:hover {
-    background: #FF80AB;
+    .buttons button {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
 }

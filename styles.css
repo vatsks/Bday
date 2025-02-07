@@ -6,13 +6,13 @@ body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #FF6EC7, #8A2BE2);
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
     text-align: center;
-    flex-direction: column;
-    padding: 20px; /* Add padding for mobile screens */
+    padding: 20px;
 }
 
 /* Home Page */
@@ -20,32 +20,33 @@ body {
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
     color: white;
+    margin-bottom: 10px;
 }
 
-/* Responsive Text */
 p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
+    margin-bottom: 20px;
 }
 
-/* Buttons */
 .btn {
     background: #FF4081;
     color: white;
-    padding: 14px 22px;
-    font-size: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 30px;
     transition: all 0.3s ease-in-out;
+    display: inline-block;
 }
 
 .btn:hover {
     background: #FF80AB;
 }
 
-/* 🌸 Gallery Image Styling */
+/* Gallery Image Styling */
 #galleryImage {
     border-radius: 20px;
     border: 6px solid;
@@ -53,51 +54,125 @@ p {
     border-image-slice: 1;
     transition: all 0.3s ease-in-out;
     object-fit: cover;
-    width: 100%;
-    max-width: 450px;
+    max-width: 100%;
     height: auto;
 }
 
-/* Adjust for Mobile Screens */
+/* Click Me Button */
+.note-btn {
+    position: absolute;
+    background: white;
+    color: #FF4081;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.note-btn:hover {
+    background: #FF80AB;
+    color: white;
+}
+
+/* Hidden Note */
+.hidden-note {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to right, #E6E6FA, #FFDAB9);
+    padding: 12px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    width: 180px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Show Note Animation */
+.show-note {
+    display: block;
+    max-height: 100px;
+    opacity: 1;
+}
+
+/* Navigation Buttons */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.buttons button {
+    background: #FF4081;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+    background: #FF80AB;
+}
+
+/* 📌 Mobile Responsiveness */
 @media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
     .home-container h1 {
-        font-size: 2.5rem; /* Reduce font size */
+        font-size: 2.5rem;
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
-    /* Button Adjustments */
     .btn {
-        font-size: 18px;
-        padding: 12px 18px;
+        font-size: 16px;
+        padding: 10px 18px;
     }
 
-    /* Responsive Images */
-    .landscape, .portrait {
-        width: 90%;
+    /* Resize images properly */
+    #galleryImage {
+        max-width: 90%;
         height: auto;
     }
 
-    #galleryImage {
-        max-width: 100%;
-    }
-
-    /* Note Button */
-    .note-btn {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-
-    /* Navigation Buttons */
+    /* Adjust buttons for smaller screens */
     .buttons {
-        flex-direction: column; /* Stack buttons for smaller screens */
+        flex-direction: column;
         gap: 10px;
     }
 
     .buttons button {
-        font-size: 16px;
-        padding: 10px 16px;
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    /* Ensure note button & notes adjust well */
+    .note-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .hidden-note {
+        width: 150px;
+        font-size: 12px;
     }
 }

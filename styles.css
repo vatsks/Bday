@@ -1,0 +1,130 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;500&family=Montserrat:wght@400;600&display=swap');
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #FF6EC7, #8A2BE2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+/* Home Page */
+.home-container h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: white;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.btn {
+    background: #FF4081;
+    color: white;
+    padding: 14px 22px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #FF80AB;
+}
+
+/* Gallery Image Styling */
+#galleryImage {
+    border-radius: 20px;
+    border: 8px solid;
+    border-image-source: linear-gradient(45deg, #FFC0CB, #FFDAB9);
+    border-image-slice: 1;
+    transition: all 0.3s ease-in-out;
+    object-fit: cover;
+}
+
+/* Landscape Images */
+.landscape {
+    width: 450px;
+    height: 300px;
+}
+
+/* Portrait Images */
+.portrait {
+    width: 300px;
+    height: 450px;
+}
+
+/* Click Me Button */
+.note-btn {
+    position: absolute;
+    background: white;
+    color: #FF4081;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.note-btn:hover {
+    background: #FF80AB;
+    color: white;
+}
+
+/* Hidden Note */
+.hidden-note {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to right, #E6E6FA, #FFDAB9);
+    padding: 15px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Show Note Animation */
+.show-note {
+    display: block;
+    max-height: 100px;
+    opacity: 1;
+}
+
+/* Navigation Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    background: #FF4081;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+    background: #FF80AB;
+}
